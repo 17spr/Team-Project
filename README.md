@@ -3,11 +3,11 @@ A project by Mostafa, Jamie, Alex, and Jesse @ UNCC Coding Bootcamp.
 
 ====================================================================
 
-    Just high-level pseudocode of our ideas:
+    High-level pseudocode of our ideas:
 
     *  Set up the HTML wireframe with the essential elements (head, title, body, etc)
     *  Add navigation, search bar, maybe a jumbotron, footer, etc
-    *  style with css (class CSS or library of choice - Bootstrap, Materialize, etc)
+    *  style with css (classic CSS or library of choice - Bootstrap, Materialize, etc)
     *  link JS file to HTML file 
     *  locate our API links (Ticket Master, Google Maps, Lyft, and/or Uber)
     *  create developer accounts and generate API keys if needed 
