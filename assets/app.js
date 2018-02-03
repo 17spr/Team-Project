@@ -12,13 +12,10 @@ $.ajax({
   error: function(xhr, status, err) {
               // This time, we do not end up here!
            }
-<<<<<<< HEAD
-});
+})
 
-=======
-}
 
 // after we get the AJAX data...
 .done(function(response) {
-    
+
 })
