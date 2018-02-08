@@ -13,60 +13,56 @@
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h1 class="text-center">We didn't fail</h1>
+    <div class="row">
+        <div id="testImage" >
+        <div id="mainHeader">
+            <h1 class="text-center">Get to the Show</h1>
+        </div>
+        </div>
     </div>
-    <div id="inputSection">
-        <div class="col-md-4"></div>
-        <div id="inputMenu" class="col-md-4">
-            <div id="inputPanel" class="panel panel-primary">
-                <div class="panel panel-heading">
-                    <h2> What are we doing today?</h2>
-                </div>
-                <div id="location" class="form-group">
-                    <label for="location-input">Enter the postal code for where you want to view events for</label>
+    <div class="row">
+        <div id="inputSection">
+            <div class="col-md-4"></div>
+            <div id="inputMenu" class="col-md-4">
+                <form name="myForm" id="inputPanel" class="panel panel-primary">
+                    <div>
+                        <h2> What are we doing today?</h2>
+                    </div>
+                    <div id="location" class="form-group">
+
+                        <label for="location-input">Enter the postal code for where you want to view events for</label>
+                        <p id="reqTarget"></p>
+
+                        <input class="form-cotrol" id="location-input" type="text" name="fname">
+                    </div>
+                    <div id="eventType" class="form-group">
+                        <br>
+                        <label for="eventType-input"> who/what you wish to attend</label>
+                        <br>
+                        <input class="form-cotrol" id="eventType-input" type="text">
+                    </div>
                     <br>
-                    <input class="form-cotrol" id="location-input" type="text">
-                </div>
-                <div id="dates" class="form-group">
-                    <br>
-                    <label for="dates-input">Please enter the date you wish to go out MMDDYYYY</label>
-                    <br>
-                    <input class="form-cotrol" id="dates-input" type="text">
-                </div>
-                <div id="eventType" class="form-group">
-                    <br>
-                    <label for="eventType-input"> who/what you wish to attend</label>
-                    <br>
-                    <input class="form-cotrol" id="eventType-input" type="text">
-                </div>
-                <br>
-                <div class="btn btn-primary" id="submit" type="submit">
-                    Submit
-                </div>
+                    <input value="submit" class="btn btn-primary" id="submit" type="submit">
+
+
+                </form>
             </div>
         </div>
     </div>
-    <d iv id="resultsSection">
-        <div id="events">
-            <!-- put ticketmaster stuff in here -->
-            Ticket Master here
-        </div>
-        <div id="LyftTarget">
-            <!-- put lyft stuff here -->
-            Lyft here
-        </div>
-        <div id="uberTarget">
-            <!-- put uber stuff here -->
-            Uber here
-        </div>
-        <div id="mapTarget">
-            <!-- put maps here -->
-            maps here
-        </div>
+    <div class="row">
+        <d iv id="resultsSection">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" id="eventTarget">
+                <div id="events">
 
-        </div>
-        <script type="text/javascript" src="assets/app.js"></script>
+                    <!-- put ticketmaster stuff in here -->
+
+
+                </div>
+
+            </div>
+    </div>
+    <script type="text/javascript" src="assets/app.js"></script>
 </body>
 
 </html>
