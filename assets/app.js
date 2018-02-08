@@ -12,6 +12,8 @@ $("#submit").click(function () {
     console.log(postalCode);
     keyword = $("#eventType-input").val();
 
+    $("#map-container").attr("src", "https://www.google.com/maps/embed/v1/place?q="+ postalCode +"&key=AIzaSyAHuXEAS9mdigA2s8g5qz323VNGt70mpbk")
+
     $.ajax({
         type: "GET",
         url: "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&postalCode=" + postalCode + "&size=10&apikey=3YaVJZm3QgMON91AlLZSyPWcb28zycgA",
@@ -47,6 +49,8 @@ $("#submit").click(function () {
             // This time, we do not end up here!
         }
     });
+
+    
 
 });
 
