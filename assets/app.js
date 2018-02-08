@@ -19,7 +19,7 @@ $(document).ready(function () {
             postalCode = $("#location-input").val();
             console.log(postalCode);
             keyword = $("#eventType-input").val();
-
+            $("#map-container").attr("src", "https://www.google.com/maps/embed/v1/place?q="+ postalCode +"&key=AIzaSyAHuXEAS9mdigA2s8g5qz323VNGt70mpbk")
             $.ajax({
                 type: "GET",
                 url: "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&postalCode=" + postalCode + "&size=10&apikey=3YaVJZm3QgMON91AlLZSyPWcb28zycgA",
@@ -42,19 +42,20 @@ $(document).ready(function () {
 
 
                             $("#events").attr("class", "col-md-6")
-                                        .append("<p class = 'well'>" + eventName
+                                .append("<p class = 'well'>" + eventName
                                 + "<br>" +
                                 "<img id='imgAPI' src=" + eventImage + " width=300 height=200>"
                                 + "<br>" +
                                 "Please note: " + eventNote
                                 + "<br>" +
-                                "<a href=" + eventTickets + ">" + "Buy your tickets here!</a>" + "</p>"
+                                "<a href=" + eventTickets + " target='_blank'>" + "Buy your tickets here!</a>" + "</p>"
                                 //GOOGLE MAPS HERE                        
-                            )
+                                )
 
                         }
                     } else {
-                        $("#events").append("Sorry there are no shows in your area");
+                        $("#events").attr("class", "well")
+                            .append("Sorry there are no shows in your area");
                     }
 
                 },

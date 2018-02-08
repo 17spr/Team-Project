@@ -29,3 +29,6 @@ body{
 #imgAPI{
     padding-left: 20%;
 }
+#mapTarget{
+    z-index: 99;
+}

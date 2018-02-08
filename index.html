@@ -14,10 +14,10 @@
 
 <body>
     <div class="row">
-        <div id="testImage" >
-        <div id="mainHeader">
-            <h1 class="text-center">Get to the Show</h1>
-        </div>
+        <div id="testImage">
+            <div id="mainHeader">
+                <h1 class="text-center">Get to the Show</h1>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -30,7 +30,7 @@
                     </div>
                     <div id="location" class="form-group">
 
-                        <label for="location-input">Enter the postal code for where you want to view events for</label>
+                        <label for="location-input">(Required:) Enter your zip code to find events near you</label>
                         <p id="reqTarget"></p>
 
                         <input class="form-cotrol" id="location-input" type="text" name="fname">
@@ -60,6 +60,10 @@
 
                 </div>
 
+
+                <div id="mapTarget">
+                    <iframe id="map-container" width="600" height="450" frameborder="0" style="border:0" src="" allowfullscreen></iframe>
+                </div>
             </div>
     </div>
     <script type="text/javascript" src="assets/app.js"></script>
