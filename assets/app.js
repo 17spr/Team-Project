@@ -1,5 +1,5 @@
 var postalCode
-var userDate
+var userzip= $("location-input").val();
 var keyword
 
 
@@ -7,8 +7,9 @@ $("#resultsSection").hide();
 $("#submit").click(function () {
     $("#inputMenu").hide();
     $("#resultsSection").show();
-    userLocation = $("#location-input").val();
-    postalCode = $("#dates-input").val();
+    // userLocation = $("#location-input").val();
+    postalCode = $("#location-input").val();
+    console.log(postalCode);
     keyword = $("#eventType-input").val();
 
     $.ajax({
@@ -20,14 +21,23 @@ $("#submit").click(function () {
             console.log(json);
 
             for (var i = 0; i < 10; i++) {
-                //turn these into variables so you can get rid of undefineds
-                $("#events").append("<p class = 'well'>" + json._embedded.events[i].name
+                var eventName = json._embedded.events[i].name;
+                var eventImage = json._embedded.events[i].images[1].url;
+                var eventNote = json._embedded.events[i].pleaseNote;
+                var eventTickets = json._embedded.events[i].url;
+                var eventAddress= json._embedded.events[i]._embedded.venues[0].address.line1;
+                console.log("ADDRESS = " + eventAddress);
+                //stops displaying undefined
+                if (eventNote === undefined){
+                    eventNote = "No notes available for this event";
+                };
+                $("#events").append("<p class = 'well'>" + eventName
                     + "<br>"+
-                    "<img src=" + json._embedded.events[i].images[1].url + " width=300 height=200>"
+                    "<img src=" + eventImage + " width=300 height=200>"
                     + "<br>" +
-                    "Please note: "+ json._embedded.events[i].pleaseNote 
+                    "Please note: "+ eventNote
                     +"<br>" +
-                    "<a href=" + json._embedded.events[i].url +">" + "Buy your tickets here!</a>" + "</p>")
+                    "<a href=" + eventTickets +">" + "Buy your tickets here!</a>" + "</p>")
 
             }
 
