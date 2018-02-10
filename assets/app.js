@@ -5,6 +5,9 @@ $(document).ready(function () {
     $("#resultsSection").hide();
     $("#submit").on('click', function (e) {
         e.preventDefault();
+        $("#reloadButton").click(function () {
+            location.reload();
+        })
         $("#location-input").text("");
         postalCode = $("#location-input").val().trim();
         $("#events").empty();
@@ -14,7 +17,6 @@ $(document).ready(function () {
             $("#inputMenu").hide();
             $("#resultsSection").show();
             postalCode = $("#location-input").val();
-            console.log(postalCode);
             keyword = $("#eventType-input").val();
 
             $.ajax({
@@ -25,7 +27,8 @@ $(document).ready(function () {
                 success: function (json) {
                     console.log(json);
                     if (json._embedded) {
-                        for (var i = 0; i < 10; i++) {
+                        for (var i = 0; i <json.page.totalElements; i++) {
+                            
                             var responseData = json._embedded.events[i];
                             var eventName = responseData.name;
                             var eventImage = responseData.images[1].url;
@@ -49,7 +52,7 @@ $(document).ready(function () {
                                 "<a href=" + eventTickets + " target='_blank'>" + "Buy your tickets here!</a>" + "</p>"
                                 )
                             $("#map-container").attr("src", "https://www.google.com/maps/embed/v1/place?q=" + postalCode + "&key=AIzaSyAHuXEAS9mdigA2s8g5qz323VNGt70mpbk")
-                          
+
                         };
                     } else {
                         $("#events").attr("class", "well")
@@ -57,7 +60,7 @@ $(document).ready(function () {
                             .append("<br>")
                             .append("<button id='reloadButton' class='noShowButton'>Search Again</button>");
                     }
-                    $("#reloadButton").click(function(){
+                    $("#reloadButton").click(function () {
                         location.reload();
                     })
                 },
