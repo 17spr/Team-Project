@@ -1,0 +1,48 @@
+body{
+    background-image: url(http://bostonclassicalreview.com/wp-content/uploads/2013/09/OdysseyOpera_1_byKathyWittman.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#testImage{
+    position: relative;
+    padding-left: 31%;
+}
+#inputSection{
+    text-align: center;
+}
+#reqTarget{
+    color: red;
+}
+#inputPanel{
+    margin-top: 150px;
+    font-weight: bold;
+    text-shadow: 2px 1px rgb(0,0,0);
+    background-image: url(http://www.laurencebrown.org.uk/wp-content/uploads/2013/01/festival-crowd.jpg);
+    color: rgb(138, 118, 81);
+    border: .5px solid black;
+    outline-style: solid;
+    outline-color: rgb(233, 231, 226);
+    outline-width: thin;
+}
+#imgAPI{
+    padding-left: 20%;
+}
+#mapTarget{
+    z-index: 99;
+    position: fixed;
+    margin-left: 40%;
+
+}
+#location{
+    font-size: 15px;
+}
+#reset{
+    width:500px;
+    height:300px;
+    margin-left:40%;
+    margin-top: 350px;
+    position:fixed;
+    text-align: center;
+    font-size: 20px;
+    background-image: url(http://www.laurencebrown.org.uk/wp-content/uploads/2013/01/festival-crowd.jpg);
+}
